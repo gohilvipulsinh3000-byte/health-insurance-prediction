@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HealthShield | Insurance Predictor</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+
+<body>
+
+    <!-- Background Decoration -->
+    <div class="background-circle circle-one"></div>
+    <div class="background-circle circle-two"></div>
+
+
+    <main class="container">
+
+        <!-- Header -->
+        <header class="header">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <div>
+                    <h1>HealthShield</h1>
+                    <p>AI Insurance Predictor</p>
+                </div>
+
+            </div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                Model Online
+            </div>
+
+        </header>
+
+
+        <!-- Main Card -->
+        <section class="main-card">
+
+
+            <!-- Left Information Panel -->
+            <div class="info-panel">
+
+                <div class="info-badge">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    Machine Learning
+                </div>
+
+                <h2>
+                    Predict Your
+                    <span>Health Insurance</span>
+                    Cost
+                </h2>
+
+                <p class="description">
+                    Enter your basic health and lifestyle information.
+                    Our Machine Learning model will estimate your
+                    annual medical insurance charges.
+                </p>
+
+
+                <div class="features">
+
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+
+                        <div>
+                            <h3>Instant Prediction</h3>
+                            <p>Get results in seconds</p>
+                        </div>
+                    </div>
+
+
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+
+                        <div>
+                            <h3>ML Powered</h3>
+                            <p>Linear Regression model</p>
+                        </div>
+                    </div>
+
+
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-shield-heart"></i>
+                        </div>
+
+                        <div>
+                            <h3>Simple & Secure</h3>
+                            <p>No personal data stored</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Form Panel -->
+            <div class="form-panel">
+
+                <div class="form-header">
+
+                    <div>
+                        <p class="small-title">PREDICTION FORM</p>
+                        <h2>Your Information</h2>
+                    </div>
+
+                    <div class="form-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                </div>
+
+
+                <form id="insuranceForm">
+
+
+                    <!-- Age -->
+                    <div class="form-group">
+
+                        <label for="age">
+                            <i class="fa-solid fa-calendar"></i>
+                            Age
+                        </label>
+
+                        <input
+                            type="number"
+                            id="age"
+                            placeholder="Enter your age"
+                            min="18"
+                            max="100"
+                            required
+                        >
+
+                        <small>Age must be between 18 and 100</small>
+
+                    </div>
+
+
+                    <!-- Gender -->
+                    <div class="form-group">
+
+                        <label for="sex">
+                            <i class="fa-solid fa-venus-mars"></i>
+                            Gender
+                        </label>
+
+                        <select id="sex" required>
+
+                            <option value="" disabled selected>
+                                Select gender
+                            </option>
+
+                            <option value="male">
+                                Male
+                            </option>
+
+                            <option value="female">
+                                Female
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- BMI -->
+                    <div class="form-group">
+
+                        <label for="bmi">
+                            <i class="fa-solid fa-weight-scale"></i>
+                            BMI
+                        </label>
+
+                        <input
+                            type="number"
+                            id="bmi"
+                            placeholder="Example: 27.5"
+                            step="0.1"
+                            min="0.1"
+                            max="70"
+                            required
+                        >
+
+                        <small>
+                            Body Mass Index
+                        </small>
+
+                    </div>
+
+
+                    <!-- Children -->
+                    <div class="form-group">
+
+                        <label for="children">
+                            <i class="fa-solid fa-children"></i>
+                            Number of Children
+                        </label>
+
+                        <input
+                            type="number"
+                            id="children"
+                            placeholder="Example: 2"
+                            min="0"
+                            max="20"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Smoker -->
+                    <div class="form-group">
+
+                        <label for="smoker">
+                            <i class="fa-solid fa-smoking"></i>
+                            Smoking Status
+                        </label>
+
+                        <select id="smoker" required>
+
+                            <option value="" disabled selected>
+                                Select status
+                            </option>
+
+                            <option value="yes">
+                                Smoker
+                            </option>
+
+                            <option value="no">
+                                Non-Smoker
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Region -->
+                    <div class="form-group">
+
+                        <label for="region">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Region
+                        </label>
+
+                        <select id="region" required>
+
+                            <option value="" disabled selected>
+                                Select region
+                            </option>
+
+                            <option value="southwest">
+                                Southwest
+                            </option>
+
+                            <option value="southeast">
+                                Southeast
+                            </option>
+
+                            <option value="northwest">
+                                Northwest
+                            </option>
+
+                            <option value="northeast">
+                                Northeast
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Submit -->
+                    <button
+                        type="submit"
+                        class="predict-btn"
+                        id="predictBtn"
+                    >
+
+                        <span id="btnText">
+                            Predict Insurance Cost
+                        </span>
+
+                        <i
+                            class="fa-solid fa-arrow-right"
+                            id="btnIcon"
+                        ></i>
+
+                    </button>
+
+                </form>
+
+
+                <!-- Loading -->
+                <div
+                    class="loading"
+                    id="loading"
+                >
+                    <div class="spinner"></div>
+                    <p>Analyzing your information...</p>
+                </div>
+
+
+                <!-- Result -->
+                <div
+                    class="result"
+                    id="result"
+                >
+
+                    <div class="result-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div class="result-text">
+
+                        <p>Estimated Insurance Charge</p>
+
+                        <h2 id="predictionValue">
+                            $0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Error -->
+                <div
+                    class="error"
+                    id="error"
+                >
+                    <i class="fa-solid fa-circle-exclamation"></i>
+
+                    <span id="errorMessage">
+                        Something went wrong.
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+                <i class="fa-solid fa-microchip"></i>
+                Powered by FastAPI & Machine Learning
+            </p>
+
+            <p>
+                Health Insurance Prediction System
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
+
