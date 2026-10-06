@@ -87,19 +87,17 @@ form.addEventListener("submit", async function (event) {
 
         // Send data to FastAPI
 
-        fetch("/predict", {
+        const response = await fetch("/predict", {
 
             method: "POST",
 
             headers: {
-
                 "Content-Type": "application/json"
-
             },
 
             body: JSON.stringify(requestData)
 
-        });
+});
 
 
         // Check API response
