@@ -67,8 +67,8 @@ class InsuranceData(BaseModel):
 @app.get("/")
 def home(request: Request):
     return templates.TemplateResponse(
-        "index.html",
-        {"request": request}
+        request,
+        "index.html"
     )
 
 
