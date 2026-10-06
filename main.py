@@ -1,16 +1,22 @@
 import joblib
 import pandas as pd
 
-from fastapi import FastAPI
+from fastapi import FastAPI,Request
 from pydantic import BaseModel, Field
 from typing import Literal
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 
 
 app = FastAPI(
     title="Health Insurance Prediction API",
     description="Predict health insurance charges using Machine Learning"
 )
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+templates = Jinja2Templates(directory="templates")
 
 app.add_middleware(
     CORSMiddleware,
@@ -59,11 +65,11 @@ class InsuranceData(BaseModel):
 
 
 @app.get("/")
-def home():
-
-    return {
-        "message": "Health Insurance Prediction API is running 🚀"
-    }
+def home(request: Request):
+    return templates.TemplateResponse(
+        "index.html",
+        {"request": request}
+    )
 
 
 @app.post("/predict")
